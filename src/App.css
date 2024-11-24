@@ -13,6 +13,10 @@
   }
 }
 
+.Text_test {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
