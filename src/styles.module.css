@@ -1,0 +1,254 @@
+.visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+        to bottom,
+        #0099FF 0%,
+        #008FEE 63%,
+        #0164A7 82%,
+        #013A60 100%
+    );
+    width: 100%;
+    height: 100%;
+  }
+  
+  .header {
+    background: linear-gradient(to bottom, #0099FF 0%);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center; 
+    gap: 10px; /* Измените на нужное вам значение */
+  }
+  
+  .logoImage {
+    width: 70px; /* Установите нужный размер для изображения логотипа */
+    height: auto;
+    object-fit: contain;
+  }
+
+  .logoText {
+    font: 800 40px Montserrat, sans-serif;
+    color: #4FB8FF;
+  }
+  
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font: 500 20px Montserrat, sans-serif;
+    background-color: #006DB5;
+    border-radius: 20px;
+  }
+  
+  .navItem {
+    color: #fff;
+    background-color: rgba(0, 109, 181, 0.5);
+    border: none;
+    border-radius: 20px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font: inherit;
+  }
+  
+  .profileIcon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+  }
+  
+  .hero {
+    position: relative;
+    min-height: 854px;
+    display: flex;
+    align-items: center;
+    padding: 80px;
+  }
+  
+  .heroBackground {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .heroContent {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    max-width: 646px;
+  }
+  
+  .heroTitle {
+    font: 800 48px Montserrat, sans-serif;
+    margin: 0 0 20px;
+  }
+  
+  .heroSubtitle {
+    font: 400 24px Montserrat, sans-serif;
+    margin: 0;
+  }
+  
+  .services {
+    padding: 80px;
+  }
+  
+  .servicesTitle {
+    font: 700 35px Montserrat, sans-serif;
+    color: #fff;
+    margin: 0 0 40px;
+  }
+  
+  .servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .serviceCard {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .iconWrapper {
+    background: #0D88D9;
+    border-radius: 20px;
+    width: 82px;
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .serviceIcon {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+  }
+  
+  .serviceTitle {
+    font: 700 20px Montserrat, sans-serif;
+    color: #fff;
+    margin: 0;
+  }
+  
+  .serviceDescription {
+    font: 500 12px Montserrat, sans-serif;
+    color: #fff;
+    margin: 8px 0 0;
+  }
+  
+  .searchContainer {
+    background: #fff;
+    border-radius: 134px;
+    padding: 20px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 80px;
+  }
+  
+  .searchInput {
+    border: none;
+    font: 800 28px Montserrat, sans-serif;
+    color: rgba(0, 109, 181, 0.5);
+    width: 100%;
+    outline: none;
+  }
+  
+  .searchIcon {
+    width: 37px;
+    height: 37px;
+    object-fit: contain;
+  }
+  
+  .categories {
+    background: #fff;
+    border-radius: 92px;
+    padding: 96px 56px;
+    margin: 40px 80px;
+  }
+  
+  .categoriesTitle {
+    font: 800 32px Montserrat, sans-serif;
+    color: #0C4B74;
+    margin: 0 0 40px;
+  }
+  
+  .categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .categoryItem {
+    background: #DFF2FF;
+    border-radius: 20px;
+    height: 51px;
+  }
+  
+  .leaders {
+    background: #fff;
+    border-radius: 90px;
+    padding: 65px 56px;
+    margin: 40px 80px;
+  }
+  
+  .leadersTitle {
+    font: 800 36px Montserrat, sans-serif;
+    color: #0C4B74;
+    margin: 0 0 37px;
+  }
+  
+  .leadersGrid {
+    background: #DFF2FF;
+    border-radius: 70px;
+    height: 931px;
+  }
+  
+  @media (max-width: 991px) {
+    .header {
+      padding: 20px;
+    }
+    
+    .hero {
+      padding: 40px 20px;
+    }
+    
+    .heroTitle {
+      font-size: 40px;
+    }
+    
+    .services {
+      padding: 40px 20px;
+    }
+    
+    .searchContainer {
+      margin: 40px 20px;
+      padding: 20px;
+    }
+    
+    .categories,
+    .leaders {
+      margin: 40px 20px;
+      padding: 40px 20px;
+    }
+  }
