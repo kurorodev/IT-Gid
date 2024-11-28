@@ -10,8 +10,11 @@
   }
 
   .companyTitle {
-    font: 800 40px Montserrat, sans-serif;
+    display: flex; /* Используем Flexbox */
+    align-items: center; /* Выравниваем по вертикали */
+    font: 800 40px Montserrat, sans-serif; /* Установите размер шрифта */
     color: #FFFFFF;
+    margin: 0;
   }
   
   .mainContainer {
@@ -32,25 +35,49 @@
     background: linear-gradient(to bottom, #0099FF 0%);
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 20px
   }
   
+  .companyLogo {
+    margin-left: 10px; /* Отступ слева от логотипа */
+    max-height: 40px; /* Установите максимальную высоту логотипа равной высоте текста */
+    width: auto; /* Ширина будет автоматически подстраиваться */
+    height: auto;
+  }
+
   .logo {
     display: flex;
-    align-items: center; 
-    gap: 10px; /* Измените на нужное вам значение */
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logoContainer {
+    position: relative; /* Обязательно оставьте это */
+    width: 70px; /* Убедитесь, что ширина соответствует ширине изображения */
+    height: 70px;
+  }
+
+  .titleContainer {
+    margin-left: 350px; /* Отступ слева */
+    margin-bottom: 20px;
   }
   
   .logoImage {
-    width: 70px; /* Установите нужный размер для изображения логотипа */
-    height: auto;
+    width: 100%; /* Устанавливаем ширину изображения на 100% */
+    height: auto; /* Сохраняем пропорции */
     object-fit: contain;
   }
 
   .logoText {
     font: 800 40px Montserrat, sans-serif;
     color: #4FB8FF;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+    /* bottom: 10px; */
   }
   
   .navigation {
@@ -230,6 +257,11 @@
   }
   
   @media (max-width: 991px) {
+
+    .titleContainer {
+      margin-left: 10px;
+    }
+
     .header {
       padding: 20px;
     }
