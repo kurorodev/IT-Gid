@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ProtoHackers.module.css';
+import stylesCompany from './ProtoHackers.module.css';
 import { TeamMemberCardProps } from './types';
 
 export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
@@ -10,34 +10,34 @@ export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
   bottomImageSrc
 }) => {
   return (
-    <div className={styles.memberContainer}>
-      <div className={styles.memberBox} />
-      <div className={styles.memberRating}>
+    <div className={stylesCompany.memberContainer}>
+      <div className={stylesCompany.memberBox} />
+      <div className={stylesCompany.memberRating}>
         <img
           loading="lazy"
           src={imageSrc}
           alt="Team member rating"
-          className={styles.memberRatingImage}
+          className={stylesCompany.memberRatingImage}
         />
-        <div className={styles.memberScore}>{rating}</div>
+        <div className={stylesCompany.memberScore}>{rating}</div>
         <img
           loading="lazy"
           src={starImageSrc}
           alt=""
-          className={styles.memberStarIcon}
+          className={stylesCompany.memberStarIcon}
         />
       </div>
       <img
         loading="lazy"
         src={ratingImageSrc}
         alt=""
-        className={styles.memberRatingStars}
+        className={stylesCompany.memberRatingStars}
       />
       <img
         loading="lazy"
         src={bottomImageSrc}
         alt=""
-        className={styles.memberBottomImage}
+        className={stylesCompany.memberBottomImage}
       />
     </div>
   );

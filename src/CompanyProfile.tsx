@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
+import stylesCompany from './ProtoHackers.module.css'
 import { NavigationItem } from './NavigationItem';
 import { RatingCard } from './RatingCard';
 import { TeamMemberCard } from './TeamMemberCard';
@@ -56,7 +57,7 @@ export const CompanyProfile: React.FC = () => {
       </h2>
       </div>
 
-      <div className={styles.contentInner}>
+      <div className={stylesCompany.contentInner}>
             <HeroSection
               logoSrc="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/817b5c732052057ee7cb65aa9ce072d488dd6046217553d5ba0e6a0e72870be0?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&"
               backgroundSrc="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/6c0f50c4a300de11466737f9f4c7caa35ec796931495cf7948268ac74ab8d474?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&"
@@ -66,15 +67,15 @@ export const CompanyProfile: React.FC = () => {
               description="Наша IT-команда — это группа увлеченных и талантливых специалистов, которые активно участвуют в олимпиадах и конкурсах по программированию. Мы объединяем опытных разработчиков, аналитиков и студентов, стремящихся к..."
             />
             
-            <div className={styles.ratingsSection}>
-              <div className={styles.ratingsGrid}>
+            <div className={stylesCompany.ratingsSection}>
+              <div className={stylesCompany.ratingsGrid}>
                 {ratingData.map((data, index) => (
                   <RatingCard key={index} {...data} />
                 ))}
               </div>
               
-              <div className={styles.teamSection}>
-                <div className={styles.teamGrid}>
+              <div className={stylesCompany.teamSection}>
+                <div className={stylesCompany.teamGrid}>
                   {teamMemberData.map((data, index) => (
                     <TeamMemberCard key={index} {...data} />
                   ))}

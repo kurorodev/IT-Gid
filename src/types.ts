@@ -75,3 +75,21 @@ export interface ComparisonContainerProps {
   className?: string;
   children: React.ReactNode;
 }
+
+export interface PhotoUploadProps {
+  onUpload?: (file: File) => void;
+}
+
+export interface InputFieldProps {
+  label: string;
+  width?: string;
+}
+
+export interface NavLinkProps {
+  text: string;
+}
+
+export interface UserTypeButtonProps {
+  text: string;
+  bgColor: string;
+}
