@@ -1,0 +1,120 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .header {
+    width: 510px;
+    max-width: 100%;
+  }
+  
+  .headerContent {
+    gap: 20px;
+    display: flex;
+  }
+  
+  @media (max-width: 991px) {
+    .headerContent {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  }
+  
+  .titleColumn {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 76%;
+    margin-left: 0;
+  }
+  
+  @media (max-width: 991px) {
+    .titleColumn {
+      width: 100%;
+    }
+  }
+  
+  .title {
+    color: #fff;
+    margin-top: 43px;
+    font: 800 64px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .title {
+      margin-top: 40px;
+      font-size: 40px;
+    }
+  }
+  
+  .logoColumn {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 24%;
+    margin-left: 20px;
+  }
+  
+  @media (max-width: 991px) {
+    .logoColumn {
+      width: 100%;
+    }
+  }
+  
+  .logo {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 121px;
+    max-width: 100%;
+  }
+  
+  .subtitle {
+    color: #fff;
+    margin-top: 126px;
+    font: 700 24px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .subtitle {
+      margin-top: 40px;
+    }
+  }
+  
+  .iconWrapper {
+    border-radius: 50px;
+    background-color: #fff;
+    display: flex;
+    margin-top: 6px;
+    width: 153px;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: start;
+    border: 10px solid rgba(13, 136, 218, 1);
+  }
+  
+  .icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 64px;
+  }
+  
+  .comparisonGrid {
+    align-self: stretch;
+    display: flex;
+    margin-top: 64px;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 991px) {
+    .comparisonGrid {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }

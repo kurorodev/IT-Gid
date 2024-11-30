@@ -1,0 +1,8 @@
+.card {
+    border-radius: 40px;
+    background-color: rgba(13, 136, 218, 1);
+    display: flex;
+    width: 450px;
+    max-width: 100%;
+    height: 797px;
+  }

@@ -4,6 +4,31 @@ export interface ServiceCardProps {
   description: string;
 }
 
+export interface TeamMemberCardProps {
+  imageSrc: string;
+  rating: string;
+  starImageSrc: string;
+  ratingImageSrc: string;
+  bottomImageSrc: string;
+}
+
+export interface RatingCardProps {
+  rating: string;
+  imageSrc: string;
+  starImageSrc: string;
+  ratingImageSrc: string;
+  bottomImageSrc: string;
+}
+
+export interface HeroSectionProps {
+  logoSrc: string;
+  backgroundSrc: string;
+  teamName: string;
+  rating: string;
+  starImageSrc: string;
+  description: string;
+}
+
 export interface SearchBarProps {
   placeholder: string;
   onSearch: (value: string) => void;
@@ -34,4 +59,19 @@ export interface CompanyHeaderProps {
   description: string;         // Описание компании
   backgroundImage: string;     // Фоновое изображение
   starIcon: string;            // Иконка звезды
+}
+
+export interface ComparisonCardProps {
+  className?: string;
+}
+
+export interface LogoProps {
+  src: string;
+  alt: string;
+  className?: string;
+}
+
+export interface ComparisonContainerProps {
+  className?: string;
+  children: React.ReactNode;
 }
