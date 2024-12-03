@@ -66,13 +66,6 @@ export const CompanyProfile: React.FC = () => {
               starImageSrc="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/c50d495111a44123e5991fe254b6c83c0775901d8b10468f2e1de1000833d5f5?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&"
               description="Наша IT-команда — это группа увлеченных и талантливых специалистов, которые активно участвуют в олимпиадах и конкурсах по программированию. Мы объединяем опытных разработчиков, аналитиков и студентов, стремящихся к..."
             />
-            
-            <div className={stylesCompany.ratingsSection}>
-              <div className={stylesCompany.ratingsGrid}>
-                {ratingData.map((data, index) => (
-                  <RatingCard key={index} {...data} />
-                ))}
-              </div>
               
               <div className={stylesCompany.teamSection}>
                 <div className={stylesCompany.teamGrid}>
@@ -82,7 +75,6 @@ export const CompanyProfile: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
     </main>
   );
 };

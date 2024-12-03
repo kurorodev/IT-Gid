@@ -27,15 +27,18 @@
     flex-direction: column;
   }
   
-  .heroContainer {
+.heroContainer {
+    border-radius: 92px;
+    padding: 20px; /* Adjust padding for a smaller appearance */
+    margin: 20px 80px;
     display: flex;
     align-items: center;
+    justify-content: center; /* Center content horizontally */
     gap: 20px;
     font-family: Montserrat, sans-serif;
     color: #fff;
     font-weight: 800;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
   
   .logo {
@@ -47,14 +50,14 @@
     margin: auto 0;
   }
   
-  .heroContent {
+.heroContent {
     display: flex;
     flex-direction: column;
     border-radius: 92px;
     align-self: stretch;
     position: relative;
-    min-height: 734px;
-    padding: 452px 65px 95px;
+    height: 100vh; /* Set height to 100vh for full viewport height */
+    padding: 100px 65px; /* Adjust padding for better centering */
   }
   
   .heroBackground {
@@ -121,6 +124,9 @@
   
   .teamSection {
     margin-top: 52px;
+    border-radius: 92px;
+    padding: 96px 56px;
+    margin: 40px 80px;
   }
   
   .teamGrid {
