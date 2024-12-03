@@ -69,6 +69,7 @@ export interface LogoProps {
   src: string;
   alt: string;
   className?: string;
+  logoText?: string; // Added logoText property
 }
 
 export interface ComparisonContainerProps {

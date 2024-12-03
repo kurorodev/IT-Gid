@@ -6,6 +6,7 @@ import { RatingCard } from './RatingCard';
 import { TeamMemberCard } from './TeamMemberCard';
 import { HeroSection } from './HeroSection';
 import companyLogo from './assets/company-logo.png';
+import { UpdatedLogoWithText } from './UpdatedLogoWithText';
 
 const navItems = [
   { label: 'Главная', path: '/' },
@@ -39,8 +40,7 @@ export const CompanyProfile: React.FC = () => {
     <main className={styles.mainContainer}>
       <header className={styles.header}>
         <div className={styles.logo}>
-          <img src="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/36f953fc43c498825c741f3bc129941843a8236233cce1ace178dd247f15678e?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&" alt="" className={styles.logoImage} />
-          <span className={styles.logoText}>IT-Гид</span>
+          <UpdatedLogoWithText />
         </div>
         <nav className={styles.navigation}>
           {navItems.map((item, index) => (

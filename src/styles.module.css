@@ -49,18 +49,27 @@
 
   .logo {
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
     gap: 10px;
+    text-align: center; /* Center text */
   }
 
   .logoContainer {
-    position: relative; /* Обязательно оставьте это */
-    width: 70px; /* Убедитесь, что ширина соответствует ширине изображения */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text */
+    position: relative; /* Keep this */
+    width: 70px; /* Ensure width matches image width */
     height: 70px;
+    margin: 0 auto; /* Center the container itself */
   }
 
   .titleContainer {
-    margin-left: 350px; /* Отступ слева */
+    margin-left: 0; /* Убираем отступ слева для полного выравнивания */
     margin-bottom: 20px;
   }
   
@@ -73,11 +82,11 @@
   .logoText {
     font: 800 40px Montserrat, sans-serif;
     color: #4FB8FF;
-    left: 50%;
-    position: absolute;
+    position: relative; /* Keep it relative */
     text-align: center;
-    transform: translateX(-50%);
-    /* bottom: 10px; */
+    margin: 0; /* Remove auto margins */
+    padding: 0; /* Remove any padding */
+    line-height: 1; /* Adjust line height for better centering */
   }
   
   .navigation {

@@ -16,13 +16,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 501px 80px;
+    padding: 300px 80px; /* Уменьшаем нижний отступ для устранения вертикального скролла */
   }
   
   .contentInner {
     display: flex;
     margin-bottom: -109px;
-    width: 1180px;
+    width: 100%; /* Устанавливаем ширину на 100% для полного выравнивания */
     max-width: 100%;
     flex-direction: column;
   }

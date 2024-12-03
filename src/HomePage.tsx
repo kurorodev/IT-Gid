@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Импортируйте useNavigate
 import styles from './styles.module.css';
 import { ServiceCard } from './ServiceCard';
 import { SearchBar } from './SearchBar';
 import { NavigationItem } from './NavigationItem';
+import { UpdatedLogoWithText } from './UpdatedLogoWithText';
 
 const services = [
   {
@@ -29,29 +31,39 @@ const services = [
 
 const navItems = [
   { label: 'Главная', path: '/' },
-  { label: 'Компании', path: '/company-profile' }, // Измените путь на '/company-profile'
+  { label: 'Компании', path: '/company-profile' },
   { label: 'Сравнения', path: '/comparisons' },
   { label: 'Разместить заказ', path: '/place-order' }
 ];
 
 export const HomePage: React.FC = () => {
+  const navigate = useNavigate(); // Инициализируйте navigate
+
   const handleSearch = (value: string) => {
     console.log('Search value:', value);
+  };
+
+  const handleProfileClick = () => {
+    navigate('/profile'); // Перейдите на страницу профиля
   };
 
   return (
     <main className={styles.mainContainer}>
       <header className={styles.header}>
-      <div className={styles.logo}>
-          <img src="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/36f953fc43c498825c741f3bc129941843a8236233cce1ace178dd247f15678e?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&" alt="" className={styles.logoImage} />
-          <span className={styles.logoText}>IT-Гид</span>
+        <div className={styles.logo}>
+          <UpdatedLogoWithText />
         </div>
         <nav className={styles.navigation}>
           {navItems.map((item, index) => (
             <NavigationItem key={index} label={item.label} path={item.path} />
           ))}
         </nav>
-        <img src="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/5e21fe3307867f72100232a124eb7da2c4229c46ad765a79b0f9f1783849bccc?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&" alt="" className={styles.profileIcon} />
+        <img 
+          src="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/5e21fe3307867f72100232a124eb7da2c4229c46ad765a79b0f9f1783849bccc?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&" 
+          alt="" 
+          className={styles.profileIcon} 
+          onClick={handleProfileClick} // Добавьте обработчик клика
+        />
       </header>
 
       <section className={styles.hero}>
