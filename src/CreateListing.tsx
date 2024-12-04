@@ -60,6 +60,7 @@ export const CreateListing: React.FC = () => {
           </div>
         </div>
 
+
         <form className={stylesListing.listingForm}>
           <InputField label="Название" />
           <InputField label="Категория" />
