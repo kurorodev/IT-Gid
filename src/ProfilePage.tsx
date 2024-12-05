@@ -2,6 +2,8 @@ import React from 'react';
 import { NavigationItem } from './NavigationItem';
 import { UpdatedLogoWithText } from './UpdatedLogoWithText'; // Import the logo component
 import styles from './ProfilePage.module.css';
+import stylesNav from './styles.module.css'
+
 
 const navItems = [
   { label: 'Главная', path: '/' },
@@ -13,11 +15,11 @@ const navItems = [
 const ProfilePage: React.FC = () => {
   return (
     <div className={styles.profileContainer}>
-      <header className={styles.header}>
-        <div className={styles.logo}>
+      <header className={stylesNav.header}>
+        <div className={stylesNav.logo}>
           <UpdatedLogoWithText /> {/* Insert the logo component */}
         </div>
-        <nav className={styles.navigation}>
+        <nav className={stylesNav.navigation}>
           {navItems.map((item, index) => (
             <NavigationItem key={index} label={item.label} path={item.path} />
           ))}
@@ -25,7 +27,7 @@ const ProfilePage: React.FC = () => {
         <img 
           src="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/5e21fe3307867f72100232a124eb7da2c4229c46ad765a79b0f9f1783849bccc?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&" 
           alt="Profile Icon" 
-          className={styles.profileIcon} 
+          className={stylesNav.profileIcon} 
         />
       </header>
 
