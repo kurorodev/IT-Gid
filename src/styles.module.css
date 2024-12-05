@@ -116,7 +116,7 @@
   
   .hero {
     position: relative;
-    min-height: 854px;
+    min-height: 700px;
     display: flex;
     align-items: center;
     padding: 80px;
@@ -148,7 +148,7 @@
   }
   
   .services {
-    padding: 80px;
+    padding: 200px;
   }
   
   .servicesTitle {
@@ -200,11 +200,13 @@
   .searchContainer {
     background: #fff;
     border-radius: 134px;
-    padding: 20px 56px;
+    padding: 10px 20px; /* Reduced padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 40px 80px;
+    margin: 10px auto; /* Reduced top margin and centered */
+    width: 80%; /* Adjusted width */
+    height: 50px; /* Set fixed height */
   }
   
   .searchInput {
@@ -222,10 +224,11 @@
   }
   
   .categories {
-    background: #fff;
-    border-radius: 92px;
-    padding: 96px 56px;
-    margin: 40px 80px;
+      background: #fff;
+      border-radius: 92px;
+      padding: 96px 56px;
+      margin: 40px auto; /* Center the block */
+      width: 78%; /* Set width to match Search */
   }
   
   .categoriesTitle {
@@ -251,6 +254,8 @@
     border-radius: 90px;
     padding: 65px 56px;
     margin: 40px 80px;
+    margin: 40px auto;
+    width: 78%;
   }
   
   .leadersTitle {

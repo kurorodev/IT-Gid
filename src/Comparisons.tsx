@@ -1,5 +1,6 @@
 import React from 'react';
 import { Logo } from './Logo';
+import { NavigationItem } from './NavigationItem'; // Добавлено
 import { ComparisonCard } from './ComparisonCard';
 import styles from './Comparisons.module.css';
 
@@ -7,7 +8,7 @@ export const Comparisons: React.FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
-        <div className={styles.headerContent}>
+      <div className={styles.headerContent}>
           <div className={styles.titleColumn}>
             <h1 className={styles.title}>Сравнения</h1>
           </div>

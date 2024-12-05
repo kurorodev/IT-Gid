@@ -6,6 +6,7 @@ import { UserTypeButton } from './UserTypeButton';
 import { PhotoUpload } from './PhotoUpload';
 import { InputField } from './InputField';
 import { UpdatedLogoWithText } from './UpdatedLogoWithText';
+import { useNavigate } from 'react-router-dom';
 
 const navItems = [
     { label: 'Главная', path: '/' },
@@ -15,6 +16,12 @@ const navItems = [
   ];
 
 export const CreateListing: React.FC = () => {
+  const navigate = useNavigate(); // Инициализируйте navigate
+
+  const handleProfileClick = () => {
+    navigate('/profile'); // Перейдите на страницу профиля
+  };
+
   return (
     <div className={stylesListing.container}>
       <header className={styles.header}>
@@ -26,7 +33,12 @@ export const CreateListing: React.FC = () => {
             <NavigationItem key={index} label={item.label} path={item.path} />
           ))}
         </nav>
-        <img src="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/5e21fe3307867f72100232a124eb7da2c4229c46ad765a79b0f9f1783849bccc?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&" alt="" className={styles.profileIcon} />
+        <img 
+          src="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/5e21fe3307867f72100232a124eb7da2c4229c46ad765a79b0f9f1783849bccc?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&" 
+          alt="" 
+          className={styles.profileIcon} 
+          onClick={handleProfileClick} // Добавьте обработчик клика
+        />
       </header>
 
       <section className={stylesListing.titleSection}>

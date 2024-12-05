@@ -76,6 +76,7 @@
     display: flex;
     gap: 29px;
     margin: 122px 0 0;
+    width: 60%;
   }
   
   .userTypeButton {
