@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Импортируйте Link из react-router-dom
 import styles from './styles.module.css';
-import { NavigationItemProps } from './types';
 
-export const NavigationItem: React.FC<NavigationItemProps> = ({ label, path }) => {
-  return (
-    <Link to={path} className={styles.navItem}> {/* Используйте Link с атрибутом to */}
-      {label}
-    </Link>
-  );
-};
-
-export const ProfileDropdown: React.FC = () => {
+const ProfileDropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -35,3 +26,5 @@ export const ProfileDropdown: React.FC = () => {
     </div>
   );
 };
+
+export default ProfileDropdown;

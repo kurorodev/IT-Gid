@@ -1,7 +1,7 @@
 import React from 'react';
-import stylesListing from './CreateListing.module.css';
+import stylesListing from './NewCreateListing.module.css';
 import styles from './styles.module.css'
-import { NavigationItem } from './NavigationItem';
+import { NavigationItem, ProfileDropdown } from './NavigationItem';
 import { UserTypeButton } from './UserTypeButton';
 import { PhotoUpload } from './PhotoUpload';
 import { InputField } from './InputField';
@@ -33,12 +33,7 @@ export const CreateListing: React.FC = () => {
             <NavigationItem key={index} label={item.label} path={item.path} />
           ))}
         </nav>
-        <img 
-          src="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/5e21fe3307867f72100232a124eb7da2c4229c46ad765a79b0f9f1783849bccc?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&" 
-          alt="" 
-          className={styles.profileIcon} 
-          onClick={handleProfileClick} // Добавьте обработчик клика
-        />
+        <ProfileDropdown />
       </header>
 
       <section className={stylesListing.titleSection}>

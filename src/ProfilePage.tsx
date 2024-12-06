@@ -1,9 +1,9 @@
 import React from 'react';
-import { NavigationItem } from './NavigationItem';
+import { NavigationItem } from './NavigationItem'; // Import NavigationItem
+import ProfileDropdown from './ProfileDropdown'; // Import ProfileDropdown
 import { UpdatedLogoWithText } from './UpdatedLogoWithText'; // Import the logo component
 import styles from './ProfilePage.module.css';
-import stylesNav from './styles.module.css'
-
+import stylesNav from './styles.module.css';
 
 const navItems = [
   { label: 'Главная', path: '/' },
@@ -26,8 +26,8 @@ const ProfilePage: React.FC = () => {
         </nav>
         <img 
           src="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/5e21fe3307867f72100232a124eb7da2c4229c46ad765a79b0f9f1783849bccc?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&" 
-          alt="Profile Icon" 
-          className={stylesNav.profileIcon} 
+          alt="" 
+          className={styles.profileIcon} 
         />
       </header>
 
