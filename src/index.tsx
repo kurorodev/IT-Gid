@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router-dom'; // Импортируйте Router
 import './index.css';
-import { App } from './App'; // Создайте новый компонент App для маршрутизации
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -11,9 +10,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <Router>
-      <App /> {/* Оберните ваш компонент App в Router */}
-    </Router>
+    <App />
   </React.StrictMode>
 );
 

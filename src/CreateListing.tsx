@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import stylesListing from './NewCreateListing.module.css';
-import styles from './styles.module.css'
-import { NavigationItem, ProfileDropdown } from './NavigationItem';
+import styles from './styles.module.css';
+import { NavigationItem } from './NavigationItem';
+import ProfileDropdown from './ProfileDropdown';
 import { UserTypeButton } from './UserTypeButton';
 import { PhotoUpload } from './PhotoUpload';
 import { InputField } from './InputField';
@@ -13,13 +14,59 @@ const navItems = [
     { label: 'Компании', path: '/company-profile' },
     { label: 'Сравнения', path: '/comparisons' },
     { label: 'Разместить заказ', path: '/place-order' }
-  ];
+];
 
 export const CreateListing: React.FC = () => {
   const navigate = useNavigate(); // Инициализируйте navigate
 
   const handleProfileClick = () => {
     navigate('/profile'); // Перейдите на страницу профиля
+  };
+
+  const [selectedUserType, setSelectedUserType] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    category: '',
+    price: '',
+    description: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:8000/main/company', {
+        method: 'POST',
+        headers: {
+          'accept': 'application/json',
+          'token': 'GNd0c64~Q?naTXb}p1{V|lbh&~`#`&@&',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          avatar: [0],
+          description: formData.description,
+          email: 'string',
+          inn: 'string',
+          manager_telegram: 'string',
+          name: formData.name,
+          phone: 'string'
+        })
+      });
+
+      if (response.ok) {
+        alert('Объявление успешно размещено!');
+        navigate('/'); // Перенаправление на главную страницу
+      } else {
+        alert('Ошибка при размещении объявления. Попробуйте снова.');
+      }
+    } catch (error) {
+      console.error('Ошибка при отправке запроса:', error);
+      alert('Произошла ошибка. Попробуйте снова.');
+    }
   };
 
   return (
@@ -49,38 +96,18 @@ export const CreateListing: React.FC = () => {
       </section>
 
       <section className={stylesListing.userTypeSection}>
-        <UserTypeButton text="Я заказчик" bgColor="rgba(0, 78, 130, 1)" />
-        <UserTypeButton text="Я программист" bgColor="rgba(13, 136, 218, 1)" />
+        <UserTypeButton
+          text="Заказчик"
+          bgColor="rgba(0, 78, 130, 1)"
+          selected={selectedUserType === 'Заказчик'}
+          onClick={() => handleUserTypeClick('Заказчик')}
+        />
+        <UserTypeButton
+          text="Исполнитель"
+          bgColor="rgba(13, 136, 218, 1)"
+          selected={selectedUserType === 'Исполнитель'}
+          onClick={() => handleUserTypeClick('Исполнитель')}
+        />
       </section>
 
       <main className={stylesListing.mainContent}>
-        <div className={stylesListing.photoGrid}>
-          <div className={stylesListing.photoColumn}>
-            <div className={stylesListing.photoPreview}>
-              <div className={stylesListing.photoPreviewInner}>
-                <div className={stylesListing.photoPreviewBox} />
-              </div>
-            </div>
-          </div>
-          <div className={stylesListing.uploadColumn}>
-            <PhotoUpload />
-          </div>
-        </div>
-
-
-        <form className={stylesListing.listingForm}>
-          <InputField label="Название" />
-          <InputField label="Категория" />
-          <InputField label="Цена" width="249px" />
-          
-          <label className={stylesListing.descriptionLabel}>Описание:</label>
-          <div className={stylesListing.descriptionField} />
-          
-          <button type="submit" className={stylesListing.submitButton}>
-            Разместить
-          </button>
-        </form>
-      </main>
-    </div>
-  );
-};

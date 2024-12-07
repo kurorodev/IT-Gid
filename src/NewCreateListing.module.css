@@ -55,12 +55,12 @@
 .titleSection {
     display: flex;
     align-items: center;
-    margin: 94px 0 0;
+    margin: 10px auto;
 }
 
 .title {
     color: #fff;
-    font: 800 64px Montserrat, sans-serif;
+    font: 800 32px Montserrat, sans-serif;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -75,8 +75,7 @@
 .userTypeSection {
     display: flex;
     gap: 29px;
-    margin: 122px 0 0;
-    width: 60%;
+    margin: 10px auto;
 }
 
 .userTypeButton {

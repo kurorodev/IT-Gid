@@ -55,12 +55,12 @@
   .titleSection {
     display: flex;
     align-items: center;
-    margin: 94px 0 0;
+    margin: 10px auto;
   }
   
   .title {
     color: #fff;
-    font: 800 64px Montserrat, sans-serif;
+    font: 800 32px Montserrat, sans-serif;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -86,14 +86,15 @@
     padding: 22px 69px;
   }
   
-  .mainContent {
-    background: #fff;
-    border-radius: 92px;
-    padding: 96px 56px;
-    margin: 10px auto;
-    width: 60%;
-    height: 60%;
-  }
+.mainContent {
+  background: #fff;
+  border-radius: 92px;
+  padding: 96px 56px;
+  margin: 10px auto;
+  width: 60%;
+  max-height: calc(100vh - 200px); /* Adjust the height to fit within the viewport */
+  overflow-y: auto; /* Enable scrolling within the section if content overflows */
+}
   
   .photoGrid {
     display: grid;

@@ -30,6 +30,24 @@ const services = [
   }
 ];
 
+const categories: { title: string; description: string }[] = [
+  { title: "Web Development", description: "Build and maintain websites" },
+  { title: "Mobile App Development", description: "Develop mobile applications" },
+  { title: "Software Testing", description: "Ensure software quality" },
+  { title: "Data Analysis", description: "Analyze and interpret data" },
+  { title: "Cloud Services", description: "Manage cloud infrastructure" },
+  { title: "Cybersecurity", description: "Protect against cyber threats" },
+  { title: "DevOps", description: "Streamline development and operations" },
+  { title: "UI/UX Design", description: "Create user-friendly interfaces" },
+  { title: "Database Management", description: "Manage and optimize databases" },
+  { title: "AI and Machine Learning", description: "Develop intelligent systems" },
+  { title: "Project Management", description: "Plan and execute projects" },
+  { title: "Network Administration", description: "Manage network infrastructure" },
+  { title: "IT Consulting", description: "Provide expert advice" },
+  { title: "IT Support", description: "Offer technical support" },
+  { title: "IT Training", description: "Train and educate users" }
+];
+
 const navItems = [
   { label: 'Главная', path: '/' },
   { label: 'Компании', path: '/company-profile' },
@@ -94,11 +112,13 @@ export const HomePage: React.FC = () => {
 
       <section className={styles.categories}>
         <h2 className={styles.categoriesTitle}>Категории:</h2>
-        <div className={styles.categoriesGrid}>
-          {Array(15).fill(null).map((_, index) => (
-            <div key={index} className={styles.categoryItem} />
-          ))}
-        </div>
+<div className={styles.categoriesGrid}>
+  {categories.map((category: { title: string }, index: number) => (
+    <div key={index} className={styles.categoryItem}>
+      <h3>{category.title}</h3>
+    </div>
+  ))}
+</div>
       </section>
 
       <section className={styles.leaders}>

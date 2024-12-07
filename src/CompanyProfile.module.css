@@ -10,230 +10,244 @@
   );
   width: 100%;
   height: 100%;
-  }
-  
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font: 500 20px Montserrat, sans-serif;
+  background-color: #006DB5;
+  border-radius: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center; 
+  gap: 10px;
+}
+
+.logoImage {
+  width: 70px; /* Установите нужный размер для изображения логотипа */
+  height: auto;
+  object-fit: contain;
+}
+
+.navLinks {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  color: #fff;
+  font: 400 20px Montserrat, sans-serif;
+  background: rgba(0, 109, 181, 0.5);
+  border-radius: 20px;
+  padding: 23px 39px;
+}
+
+.menuIcon {
+  width: 70px;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.header {
+  background: linear-gradient(to bottom, #0099FF 0%);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerSection {
+  margin-top: 105px;
+  width: 100%;
+  padding: 0 80px;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sectionTitle {
+  color: #fff;
+  font: 800 64px Montserrat, sans-serif;
+}
+
+.titleIcon {
+  width: 121px;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.companyHeader {
+  position: relative;
+  border-radius: 20px; /* Add this to round the corners */
+  min-height: 500px; /* Reduce the height */
+  padding: 200px 65px 50px; /* Reduce the padding */
+  margin-top: 105px;
+}
+
+.headerBackground {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.headerContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 31px;
+  color: #fff;
+}
+
+.companyName {
+  font: 800 64px Montserrat, sans-serif;
+}
+
+.ratingWrapper {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.ratingScore {
+  font: 800 64px Montserrat, sans-serif;
+}
+
+.starIcon {
+  width: 45px;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.companyDescription {
+  position: relative;
+  font-size: 24px;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.cardsSection {
+  background: #70C6FF;
+  border-radius: 92px;
+  padding: 109px 60px;
+  margin-top: 121px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.companyCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cardContent {
+  background: #fff;
+  border-radius: 40px;
+  aspect-ratio: 1;
+  width: 100%;
+}
+
+.ratingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ratingScore {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font: 800 24px Montserrat, sans-serif;
+}
+
+.ratingImage {
+  width: 147px;
+  aspect-ratio: 14.71;
+  object-fit: contain;
+}
+
+.starImage {
+  width: 200px;
+  aspect-ratio: 20;
+  object-fit: contain;
+}
+
+.verifiedIcon {
+  width: 25px;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.reviewImage {
+  width: 110px;
+  aspect-ratio: 10.99;
+  object-fit: contain;
+  margin-top: 12px;
+}
+
+@media (max-width: 991px) {
   .navigation {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    font: 500 20px Montserrat, sans-serif;
-    background-color: #006DB5;
-    border-radius: 20px;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center; 
-    gap: 10px;
-  }
-  
-  .logoImage {
-    width: 70px; /* Установите нужный размер для изображения логотипа */
-    height: auto;
-    object-fit: contain;
-  }
-  
-  .navLinks {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-    color: #fff;
-    font: 400 20px Montserrat, sans-serif;
-    background: rgba(0, 109, 181, 0.5);
-    border-radius: 20px;
-    padding: 23px 39px;
-  }
-  
-  .menuIcon {
-    width: 70px;
-    aspect-ratio: 1;
-    object-fit: contain;
+    padding: 20px;
   }
 
-  .header {
-    background: linear-gradient(to bottom, #0099FF 0%);
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
+  .navLinks {
+    padding: 20px;
   }
-  
+
   .headerSection {
-    margin-top: 105px;
-    width: 100%;
-    padding: 0 80px;
+    margin-top: 40px;
+    padding: 0 20px;
   }
-  
-  .titleWrapper {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
+
   .sectionTitle {
-    color: #fff;
-    font: 800 64px Montserrat, sans-serif;
+    font-size: 40px;
   }
-  
-  .titleIcon {
-    width: 121px;
-    aspect-ratio: 1;
-    object-fit: contain;
-  }
-  
+
   .companyHeader {
-    position: relative;
-    border-radius: 92px;
-    min-height: 734px;
-    padding: 452px 65px 95px;
-    margin-top: 105px;
+    margin-top: 40px;
+    padding: 100px 20px;
   }
-  
-  .headerBackground {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .headerContent {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 31px;
-    color: #fff;
-  }
-  
+
   .companyName {
-    font: 800 64px Montserrat, sans-serif;
+    font-size: 40px;
   }
-  
-  .ratingWrapper {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-  }
-  
+
   .ratingScore {
-    font: 800 64px Montserrat, sans-serif;
+    font-size: 40px;
   }
-  
-  .starIcon {
-    width: 45px;
-    aspect-ratio: 1;
-    object-fit: contain;
-  }
-  
-  .companyDescription {
-    position: relative;
-    font-size: 24px;
-    color: #fff;
-    margin-top: 20px;
-  }
-  
+
   .cardsSection {
-    background: #70C6FF;
-    border-radius: 92px;
-    padding: 109px 60px;
-    margin-top: 121px;
+    margin-top: 40px;
+    padding: 40px 20px;
   }
-  
+
   .cardsGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: 1fr;
   }
-  
-  .companyCard {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .cardContent {
-    background: #fff;
-    border-radius: 40px;
-    aspect-ratio: 1;
-    width: 100%;
-  }
-  
-  .ratingContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  
-  .ratingScore {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #fff;
-    font: 800 24px Montserrat, sans-serif;
-  }
-  
-  .ratingImage {
-    width: 147px;
-    aspect-ratio: 14.71;
-    object-fit: contain;
-  }
-  
-  .starImage {
-    width: 200px;
-    aspect-ratio: 20;
-    object-fit: contain;
-  }
-  
-  .verifiedIcon {
-    width: 25px;
-    aspect-ratio: 1;
-    object-fit: contain;
-  }
-  
-  .reviewImage {
-    width: 110px;
-    aspect-ratio: 10.99;
-    object-fit: contain;
-    margin-top: 12px;
-  }
-  
-  @media (max-width: 991px) {
-    .navigation {
-      padding: 20px;
-    }
-  
-    .navLinks {
-      padding: 20px;
-    }
-  
-    .headerSection {
-      margin-top: 40px;
-      padding: 0 20px;
-    }
-  
-    .sectionTitle {
-      font-size: 40px;
-    }
-  
-    .companyHeader {
-      margin-top: 40px;
-      padding: 100px 20px;
-    }
-  
-    .companyName {
-      font-size: 40px;
-    }
-  
-    .ratingScore {
-      font-size: 40px;
-    }
-  
-    .cardsSection {
-      margin-top: 40px;
-      padding: 40px 20px;
-    }
-  
-    .cardsGrid {
-      grid-template-columns: 1fr;
-    }
-  }
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust as needed */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.companyTitle {
+  text-align: center;
+  margin: 0;
+}

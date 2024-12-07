@@ -1,56 +1,216 @@
-.profileContainer {
-    background-color: #00A3E0; /* Цвет фона */
-    padding: 20px;
-    min-height: 100vh;
-}
-
-.header {
+.container {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
     align-items: center;
-    padding: 10px 20px;
-}
-
-.logoText {
-    font-size: 24px;
-    color: white;
-}
-
-.navigation {
+    padding: 38px 80px 2312px;
+    background: linear-gradient(
+        to bottom,
+        #0099FF 0%,
+        #008FEE 63%,
+        #0164A7 82%,
+        #013A60 100%
+    );
+  }
+  
+  .content {
     display: flex;
-}
-
-.profileIcon {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-}
-
-.profileTitle {
+    margin-bottom: -462px;
+    width: 1185px;
+    max-width: 100%;
+    flex-direction: column;
+  }
+  
+  .header {
+    width: 100%;
+  }
+  
+  .headerContent {
+    gap: 20px;
+    display: flex;
+  }
+  
+  .logoColumn {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 17%;
+    margin-left: 0;
+  }
+  
+  .navColumn {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 83%;
+    margin-left: 20px;
+  }
+  
+  .profileCard {
+    border-radius: 50px;
+    background-color: #fff;
+    display: flex;
+    margin-top: 82px;
+    padding-bottom: 66px;
+    flex-direction: column;
+  }
+  
+  .profileName {
+    color: #19a1fc;
+    font-size: 64px;
+    align-self: start;
+    margin-top: 138px;
+  }
+  
+  .portfolioSection {
+    z-index: 10;
+    display: flex;
+    margin-top: -70px;
+    flex-direction: column;
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
+    padding: 167px 0 167px 63px;
+  }
+  
+  .portfolioTitle {
+    color: #19a0fb;
+    font-size: 24px;
+    align-self: center;
+    margin: -56px 0 -39px;
+  }
+  
+  .portfolioContent {
+    display: flex;
+    margin-top: -224px;
+    flex-direction: column;
+    padding: 0 63px;
+  }
+  
+  .portfolioImage1 {
+    border-radius: 44px;
+    background-color: #dff2ff;
+    display: flex;
+    width: 370px;
+    height: 370px;
+    aspect-ratio: 1;
+  }
+  
+  .portfolioImage2 {
+    border-radius: 40px;
+    background-color: #dff2ff;
+    align-self: end;
+    z-index: 10;
+    display: flex;
+    margin-top: -314px;
+    width: 630px;
+    max-width: 100%;
+    height: 314px;
+  }
+  
+  .descriptionSection {
+    align-self: center;
+    display: flex;
+    margin-top: 101px;
+    width: 1037px;
+    max-width: 100%;
+    flex-direction: column;
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
+  }
+  
+  .descriptionTitle {
+    color: #199ff8;
+    font-size: 24px;
+    align-self: start;
+  }
+  
+  .descriptionContent {
+    border-radius: 40px;
+    background-color: #dff2ff;
+    display: flex;
+    margin-top: 12px;
+    height: 340px;
+  }
+  
+  .logoutButton {
+    border-radius: 30px;
+    background-color: #4fb8ff;
+    align-self: center;
+    width: 340px;
+    max-width: 100%;
     font-size: 32px;
-    color: white;
-    margin: 20px 0;
-}
-
-.portfolio, .description, .tags {
-    background-color: white;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 10px 0;
-}
-
-.portfolioContent, .descriptionContent, .tagsContent {
-    min-height: 100px; /* Минимальная высота для контента */
-    background-color: #E0F7FA; /* Цвет фона для контента */
-    border-radius: 4px;
-}
-
-.logoutButton {
-    background-color: #FF5722; /* Цвет кнопки */
-    color: white;
+    color: #fff;
+    margin: 71px 0 0 12px;
+    padding: 17px 70px;
     border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
     cursor: pointer;
-    margin-top: 20px;
-}
+  }
+  
+  @media (max-width: 991px) {
+    .container {
+      max-width: 100%;
+      padding: 0 20px 100px;
+    }
+  
+    .content {
+      margin-bottom: 10px;
+    }
+  
+    .header {
+      max-width: 100%;
+    }
+  
+    .headerContent {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  
+    .logoColumn,
+    .navColumn {
+      width: 100%;
+    }
+  
+    .profileCard {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  
+    .profileName {
+      max-width: 100%;
+      margin-top: 40px;
+      font-size: 40px;
+    }
+  
+    .portfolioSection {
+      max-width: 100%;
+      padding: 100px 0 100px 20px;
+    }
+  
+    .portfolioTitle {
+      margin-bottom: 10px;
+    }
+  
+    .portfolioContent {
+      max-width: 100%;
+      margin-top: -200px;
+      padding: 0 20px;
+    }
+  
+    .portfolioImage2 {
+      margin-top: -200px;
+    }
+  
+    .descriptionSection {
+      margin-top: 40px;
+    }
+  
+    .descriptionContent {
+      max-width: 100%;
+    }
+  
+    .logoutButton {
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  }

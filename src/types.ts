@@ -93,4 +93,55 @@ export interface NavLinkProps {
 export interface UserTypeButtonProps {
   text: string;
   bgColor: string;
+  selected?: boolean;
+  onClick?: () => void;
+}
+
+export interface EmployeeCardProps {
+  imageUrl?: string;
+}
+
+export interface NavigationItemProps {
+  label: string;
+}
+
+export interface TagProps {
+  className?: string;
+}
+
+export interface ArrowButtonProps {
+  direction: 'left' | 'right';
+  onClick?: () => void;
+}
+
+export interface NavItem {
+  text: string;
+  href: string;
+}
+
+export interface ProfileData {
+  name: string;
+  portfolio: string[];
+  description: string;
+}
+
+export interface OrderCardProps {
+  imageUrl?: string;
+  paymentAmount?: string;
+  onPaymentClick: () => void;
+}
+
+export interface HeaderProps {
+  logo: string;
+  profileImage: string;
+}
+
+export interface OrdersHeaderProps {
+  title: string;
+  iconUrl: string;
+}
+
+export interface NavigationProps {
+  activeTab: 'pending' | 'history';
+  onTabChange: (tab: 'pending' | 'history') => void;
 }

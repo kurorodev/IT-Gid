@@ -1,9 +1,10 @@
 import React from 'react';
-import { NavigationItem } from './NavigationItem'; // Import NavigationItem
-import ProfileDropdown from './ProfileDropdown'; // Import ProfileDropdown
-import { UpdatedLogoWithText } from './UpdatedLogoWithText'; // Import the logo component
 import styles from './ProfilePage.module.css';
-import stylesNav from './styles.module.css';
+import stylesNav from './styles.module.css'
+import { ProfileData } from './types';
+import { UpdatedLogoWithText } from './UpdatedLogoWithText';
+import { NavigationItem } from './NavigationItem';
+import ProfileDropdown from './ProfileDropdown';
 
 const navItems = [
   { label: 'Главная', path: '/' },
@@ -12,45 +13,47 @@ const navItems = [
   { label: 'Разместить заказ', path: '/place-order' }
 ];
 
-const ProfilePage: React.FC = () => {
+const profileData: ProfileData = {
+  name: "Иван Морозов",
+  portfolio: ["Portfolio 1", "Portfolio 2"],
+  description: ""
+};
+
+export const ProfilePage: React.FC = () => {
   return (
-    <div className={styles.profileContainer}>
+    <div className={styles.container}>
       <header className={stylesNav.header}>
         <div className={stylesNav.logo}>
-          <UpdatedLogoWithText /> {/* Insert the logo component */}
+          <UpdatedLogoWithText />
         </div>
         <nav className={stylesNav.navigation}>
           {navItems.map((item, index) => (
             <NavigationItem key={index} label={item.label} path={item.path} />
           ))}
         </nav>
-        <img 
-          src="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/5e21fe3307867f72100232a124eb7da2c4229c46ad765a79b0f9f1783849bccc?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&" 
-          alt="" 
-          className={styles.profileIcon} 
-        />
+        <ProfileDropdown />
       </header>
+      <div className={styles.content}>
 
-      <h1 className={styles.profileTitle}>Protohack</h1>
-
-      <section className={styles.portfolio}>
-        <h2>Портфолио:</h2>
-        <div className={styles.portfolioContent}></div>
-      </section>
-
-      <section className={styles.description}>
-        <h2>Описание:</h2>
-        <div className={styles.descriptionContent}></div>
-      </section>
-
-      <section className={styles.tags}>
-        <h2>Ваши теги:</h2>
-        <div className={styles.tagsContent}></div>
-      </section>
-
-      <button className={styles.logoutButton}>Выйти</button>
+        <main className={styles.profileCard}>
+          <h1 className={styles.profileName}>{profileData.name}</h1>
+          
+          <section className={styles.portfolioSection}>
+            <h2 className={styles.portfolioTitle}>Портфолио:</h2>
+          </section>
+          
+          <div className={styles.portfolioContent}>
+            <div className={styles.portfolioImage1} role="img" aria-label="Portfolio example 1" />
+            <div className={styles.portfolioImage2} role="img" aria-label="Portfolio example 2" />
+          </div>
+          
+          <section className={styles.descriptionSection}>
+            <h2 className={styles.descriptionTitle}>Описание:</h2>
+            <div className={styles.descriptionContent} />
+            <button className={styles.logoutButton}>Выйти</button>
+          </section>
+        </main>
+      </div>
     </div>
   );
 };
-
-export default ProfilePage;

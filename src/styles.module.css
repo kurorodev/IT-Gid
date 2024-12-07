@@ -14,7 +14,7 @@
     align-items: center; /* Выравниваем по вертикали */
     font: 800 40px Montserrat, sans-serif; /* Установите размер шрифта */
     color: #FFFFFF;
-    margin: 0;
+    margin: 10px auto;
 }
 
 .mainContainer {
@@ -71,6 +71,7 @@
 .titleContainer {
     margin-left: 0; /* Убираем отступ слева для полного выравнивания */
     margin-bottom: 20px;
+    margin: 10px auto;
 }
 
 .logoImage {
@@ -112,6 +113,30 @@
     width: 70px;
     height: 70px;
     object-fit: contain;
+}
+
+.dropdownContainer {
+    background-color: #4FB8FF;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.dropdownMenu {
+    display: flex;
+    flex-direction: column;
+    background-color: #4FB8FF;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.dropdownItem {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #000000;
+    display: block;
 }
 
 .hero {
@@ -244,9 +269,13 @@
 }
 
 .categoryItem {
-    background: #DFF2FF;
-    border-radius: 20px;
-    height: 51px;
+  background: #DFF2FF;
+  border-radius: 20px;
+  height: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .leaders {

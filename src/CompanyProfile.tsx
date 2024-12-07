@@ -8,6 +8,7 @@ import { HeroSection } from './HeroSection';
 import companyLogo from './assets/company-logo.png';
 import { UpdatedLogoWithText } from './UpdatedLogoWithText';
 import { useNavigate } from 'react-router-dom';
+import rigthArrow from './assets/Arrow 2.png'
 
 const navItems = [
   { label: 'Главная', path: '/' },
@@ -64,15 +65,17 @@ export const CompanyProfile: React.FC = () => {
       </h2>
       </div>
 
-      <div className={stylesCompany.contentInner}>
-            <HeroSection
-              logoSrc="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/817b5c732052057ee7cb65aa9ce072d488dd6046217553d5ba0e6a0e72870be0?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&"
-              backgroundSrc="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/6c0f50c4a300de11466737f9f4c7caa35ec796931495cf7948268ac74ab8d474?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&"
-              teamName="Протохакерс"
-              rating="5.0"
-              starImageSrc="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/c50d495111a44123e5991fe254b6c83c0775901d8b10468f2e1de1000833d5f5?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&"
-              description="Наша IT-команда — это группа увлеченных и талантливых специалистов, которые активно участвуют в олимпиадах и конкурсах по программированию. Мы объединяем опытных разработчиков, аналитиков и студентов, стремящихся к..."
-            />
+<div className={stylesCompany.contentInner}>
+  <div className={stylesCompany.companyHeader}>
+    <HeroSection
+      logoSrc="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/817b5c732052057ee7cb65aa9ce072d488dd6046217553d5ba0e6a0e72870be0?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&"
+      backgroundSrc="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/6c0f50c4a300de11466737f9f4c7caa35ec796931495cf7948268ac74ab8d474?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&"
+      teamName="Протохакерс"
+      rating="5.0"
+      starImageSrc="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/c50d495111a44123e5991fe254b6c83c0775901d8b10468f2e1de1000833d5f5?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&"
+      description="Наша IT-команда — это группа увлеченных и талантливых специалистов, которые активно участвуют в олимпиадах и конкурсах по программированию. Мы объединяем опытных разработчиков, аналитиков и студентов, стремящихся к..."
+    />
+  </div>
               
               <div className={stylesCompany.teamSection}>
                 <div className={stylesCompany.teamGrid}>

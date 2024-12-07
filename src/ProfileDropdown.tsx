@@ -21,6 +21,7 @@ const ProfileDropdown: React.FC = () => {
         <div className={styles.dropdownMenu}>
           <Link to="/profile" className={styles.dropdownItem}>Мой кабинет</Link>
           <Link to="/my-company" className={styles.dropdownItem}>Моя компания</Link>
+          <Link to="/my-corsine" className={styles.dropdownItem}>Мои заказы</Link>
         </div>
       )}
     </div>
