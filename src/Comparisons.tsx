@@ -1,33 +1,100 @@
 import React from 'react';
+import { DndProvider, useDrag, useDrop } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 import { Logo } from './Logo';
 import { NavigationItem } from './NavigationItem'; // Добавлено
 import { ComparisonCard } from './ComparisonCard';
 import styles from './Comparisons.module.css';
+import stylesNav from './styles.module.css'
+import { UpdatedLogoWithText } from './UpdatedLogoWithText';
+import ProfileDropdown from './ProfileDropdown';
 
-export const Comparisons: React.FC = () => {
+const navItems = [
+  { label: 'Главная', path: '/' },
+  { label: 'Компании', path: '/company-profile' },
+  { label: 'Сравнения', path: '/comparisons' },
+  { label: 'Разместить заказ', path: '/place-order' }
+];
+
+interface DraggableItemProps {
+  item: string;
+  index: number;
+  moveItem: (dragIndex: number, hoverIndex: number) => void;
+}
+
+const DraggableItem: React.FC<DraggableItemProps> = ({ item, index, moveItem }) => {
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: 'item',
+    item: { index },
+    collect: (monitor: any) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  }));
+
+  const [, drop] = useDrop(() => ({
+    accept: 'item',
+    hover: (draggedItem: { index: number }, monitor: any) => {
+      if (draggedItem.index === index) {
+        return;
+      }
+      const dragIndex = draggedItem.index;
+      const hoverIndex = index;
+
+      if (dragIndex < hoverIndex) {
+        moveItem(dragIndex, hoverIndex - 1);
+      } else {
+        moveItem(dragIndex, hoverIndex);
+      }
+
+      draggedItem.index = hoverIndex;
+    },
+  }));
+
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.header}>
-      <div className={styles.headerContent}>
-          <div className={styles.titleColumn}>
-            <h1 className={styles.title}>Сравнения</h1>
-          </div>
-          <div className={styles.logoColumn}>
-            <Logo src="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/ae963561ed1fad4ec1db1222c6235d653ce1876b77170f65bf67b4fc12b218e1?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&" alt="Company logo" className={styles.logo} />
-          </div>
-        </div>
-      </div>
-      
-      <h2 className={styles.subtitle}>Убрать схожие показатели</h2>
-      
-      <div className={styles.iconWrapper}>
-        <Logo src="https://cdn.builder.io/api/v1/image/assets/099ff8c38f1c4ea49bfacbd7f6f0650c/8737995c4f265e84d17a86fe1351cee09aa2a43d0d69c9d95b23fd1f577bd8a6?apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c&" alt="Feature icon" className={styles.icon} />
-      </div>
-
-      <div className={styles.comparisonGrid}>
-        <ComparisonCard />
-        <ComparisonCard />
-      </div>
+    <div ref={(node) => drag(drop(node))} style={{ opacity: isDragging ? 0.5 : 1 }}>
+      {item}
     </div>
+  );
+};
+
+const items = [
+  { label: 'Цена' },
+  { label: 'Время разработки' },
+  { label: 'Рейтинг' },
+  { label: 'Отзывы' },
+  { label: 'Количество выполненных заказов' },
+];
+
+const Comparisons: React.FC = () => {
+  const [list, setList] = React.useState(items.map((item) => item.label));
+
+  const moveItem = (dragIndex: number, hoverIndex: number) => {
+    const dragItem = list[dragIndex];
+    const newList = list.filter((_, index) => index !== dragIndex);
+    newList.splice(hoverIndex, 0, dragItem);
+    setList(newList);
+  };
+
+  return (
+    <DndProvider backend={HTML5Backend}>
+      <main className={styles.mainContainer}>
+        <header className={stylesNav.header}>
+          <div className={stylesNav.logo}>
+            <UpdatedLogoWithText />
+          </div>
+          <nav className={stylesNav.navigation}>
+            {navItems.map((item, index) => (
+              <NavigationItem key={index} label={item.label} path={item.path} />
+            ))}
+          </nav>
+          <ProfileDropdown />
+        </header>
+        <section className={styles.comparisonSection}>
+          {list.map((item, index) => (
+            <DraggableItem key={index} item={item} index={index} moveItem={moveItem} />
+          ))}
+        </section>
+      </main>
+    </DndProvider>
   );
 }

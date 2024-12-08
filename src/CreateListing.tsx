@@ -1,3 +1,5 @@
+// CreateListing.tsx
+
 import React, { useState } from 'react';
 import stylesListing from './NewCreateListing.module.css';
 import styles from './styles.module.css';
@@ -17,57 +19,70 @@ const navItems = [
 ];
 
 export const CreateListing: React.FC = () => {
-  const navigate = useNavigate(); // Инициализируйте navigate
-
-  const handleProfileClick = () => {
-    navigate('/profile'); // Перейдите на страницу профиля
-  };
-
+  const navigate = useNavigate();
   const [selectedUserType, setSelectedUserType] = useState<string | null>(null);
-  const [formData, setFormData] = useState({
-    name: '',
-    category: '',
-    price: '',
-    description: ''
-  });
+const [formData, setFormData] = useState<Record<string, any>>({
+  avatar: [],
+  description: '',
+  email: '',
+  inn: '',
+  manager_telegram: '',
+  name: '',
+  phone: '',
+  category: '',
+  price: ''
+});
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const handleUserTypeClick = (userType: string) => {
+    setSelectedUserType(userType === selectedUserType ? null : userType);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('http://localhost:8000/main/company', {
-        method: 'POST',
-        headers: {
-          'accept': 'application/json',
-          'token': 'GNd0c64~Q?naTXb}p1{V|lbh&~`#`&@&',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          avatar: [0],
-          description: formData.description,
-          email: 'string',
-          inn: 'string',
-          manager_telegram: 'string',
-          name: formData.name,
-          phone: 'string'
-        })
-      });
+const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const { name, value } = e.target;
+  setFormData(prevData => ({
+    ...prevData,
+    [name]: value
+  }));
+};
 
-      if (response.ok) {
-        alert('Объявление успешно размещено!');
-        navigate('/'); // Перенаправление на главную страницу
-      } else {
-        alert('Ошибка при размещении объявления. Попробуйте снова.');
-      }
-    } catch (error) {
-      console.error('Ошибка при отправке запроса:', error);
-      alert('Произошла ошибка. Попробуйте снова.');
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  // Form validation
+  const requiredFields = ['name', 'category', 'price', 'description'];
+  const hasEmptyFields = requiredFields.some(field => !formData[field]);
+
+  if (hasEmptyFields) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+
+  const url = 'http://localhost:8000/main/company';
+  const headers = {
+    'Accept': 'application/json',
+    'token': 'GNd0c64~Q?naTXb}p1{V|lbh&~`#`&@&',
+    'Content-Type': 'application/json'
+  };
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify(formData)
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok: ' + response.statusText);
     }
-  };
+
+    const responseData = await response.json();
+    console.log('Success:', responseData);
+    // Дополнительные действия после успешной отправки, например, перенаправление
+    navigate('/success'); // Замените на нужный путь
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
 
   return (
     <div className={stylesListing.container}>
@@ -111,3 +126,37 @@ export const CreateListing: React.FC = () => {
       </section>
 
       <main className={stylesListing.mainContent}>
+        <div className={stylesListing.photoGrid}>
+          <div className={stylesListing.photoColumn}>
+            <div className={stylesListing.photoPreview}>
+              <div className={stylesListing.photoPreviewInner}>
+                <div className={stylesListing.photoPreviewBox} />
+              </div>
+            </div>
+          </div>
+          <div className={stylesListing.uploadColumn}>
+            <PhotoUpload />
+          </div>
+        </div>
+
+        <form className={stylesListing.listingForm} onSubmit={handleSubmit}>
+          <InputField label="Название" name="name" value={formData.name} onChange={handleChange} />
+          <InputField label="Категория" name="category" value={formData.category} onChange={handleChange} />
+          <InputField label="Цена" name="price" value={formData.price} onChange={handleChange} width="249px" />
+
+          <label className={stylesListing.descriptionLabel}>Описание:</label>
+          <textarea 
+            className={stylesListing.descriptionField}
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+          />
+
+          <button type="submit" className={stylesListing.submitButton}>
+            Разместить
+          </button>
+        </form>
+      </main>
+    </div>
+  );
+};
