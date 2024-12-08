@@ -282,7 +282,6 @@
     background: #fff;
     border-radius: 90px;
     padding: 65px 56px;
-    margin: 40px 80px;
     margin: 40px auto;
     width: 78%;
 }
@@ -294,16 +293,17 @@
 }
 
 .leadersGrid {
-    background: #DFF2FF;
-    border-radius: 70px;
-    height: 931px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 16px;
 }
 
-@media (max-width: 991px) {
-    .titleContainer {
-        margin-left: 10px;
-    }
-
+.leaderItem {
+    background-color: #FFFFFF;
+    padding: 16px;
+    border-radius: 8px;
+    flex: 1 1 calc(20% - 16px); /* 5 items per row with gap */
     .header {
         padding: 20px;
     }

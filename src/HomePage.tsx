@@ -48,6 +48,14 @@ const categories: { title: string; description: string }[] = [
   { title: "IT Training", description: "Train and educate users" }
 ];
 
+const leaders = [
+  { name: 'Team A', rating: Math.floor(Math.random() * 5) + 1 },
+  { name: 'Team B', rating: Math.floor(Math.random() * 5) + 1 },
+  { name: 'Team C', rating: Math.floor(Math.random() * 5) + 1 },
+  { name: 'Team D', rating: Math.floor(Math.random() * 5) + 1 },
+  { name: 'Team E', rating: Math.floor(Math.random() * 5) + 1 }
+];
+
 const navItems = [
   { label: 'Главная', path: '/' },
   { label: 'Компании', path: '/company-profile' },
@@ -121,10 +129,17 @@ export const HomePage: React.FC = () => {
 </div>
       </section>
 
-      <section className={styles.leaders}>
-        <h2 className={styles.leadersTitle}>Наши лидеры!</h2>
-        <div className={styles.leadersGrid} />
-      </section>
+<section className={styles.leaders}>
+  <h2 className={styles.leadersTitle}>Наши лидеры!</h2>
+  <div className={styles.leadersGrid}>
+    {leaders.map((leader, index) => (
+      <div key={index} className={styles.leaderItem}>
+        <h3>{leader.name}</h3>
+        <p>Рейтинг: {leader.rating}</p>
+      </div>
+    ))}
+  </div>
+</section>
     </main>
   );
 };

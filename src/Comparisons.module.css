@@ -1,120 +1,193 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  background: linear-gradient(
+        to bottom,
+        #0099FF 0%,
+        #008FEE 63%,
+        #0164A7 82%,
+        #013A60 100%
+    );
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 55px 80px;
+}
+
+.header {
+  display: flex;
+  width: 1170px;
+  max-width: 100%;
+  flex-direction: column;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 40px;
+  padding: 7px 35px 31px;
+}
+
+.backgroundImage {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.logoText {
+  position: relative;
+  color: #4FB8FF;
+  font: 800 40px Montserrat, sans-serif;
+}
+
+.headerImage {
+  aspect-ratio: 13.51;
+  object-fit: contain;
+  object-position: center;
+  width: fit-content;
+  flex-grow: 1;
+}
+
+.comparisonSection {
+  margin-top: 94px;
+  width: 510px;
+  max-width: 100%;
+}
+
+.titleWrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.title {
+  color: #fff;
+  font: 800 64px Montserrat, sans-serif;
+}
+
+.titleIcon {
+  aspect-ratio: 1;
+  width: 121px;
+}
+
+.subtitle {
+  color: #fff;
+  font: 700 24px Montserrat, sans-serif;
+  margin-top: 126px;
+}
+
+.iconContainer {
+  border-radius: 50px;
+  background: #fff;
+  width: 153px;
+  border: 10px solid #0D88DA;
+  padding: 10px;
+}
+
+.actionIcon {
+  aspect-ratio: 1;
+  width: 64px;
+}
+
+.comparisonGrid {
+  display: flex;
+  gap: 20px;
+  margin-top: 64px;
+}
+
+.comparisonItem {
+  flex: 1;
+}
+
+.circleContainer {
+  border-radius: 92px;
+  background: #fff;
+  height: 450px;
+}
+
+.comparisonImage {
+  aspect-ratio: 1;
+  object-fit: contain;
+  width: 100%;
+  margin-top: 21px;
+}
+
+.comparisonTitle {
+  color: #fff;
+  font: 800 64px Montserrat, sans-serif;
+  margin-top: 20px;
+}
+
+.cardGrid {
+  display: flex;
+  margin-top: 64px;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.comparisonCard {
+  border-radius: 40px;
+  width: 450px;
+  max-width: 100%;
+}
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 100%;
   }
-  
+
+  .content {
+    padding: 0 20px 100px;
+  }
+
   .header {
-    width: 510px;
+    margin-bottom: 10px;
+  }
+
+  .logoContainer {
+    padding: 0 20px;
+  }
+
+  .headerImage {
     max-width: 100%;
   }
-  
-  .headerContent {
-    gap: 20px;
-    display: flex;
+
+  .comparisonSection {
+    margin-top: 40px;
   }
-  
-  @media (max-width: 991px) {
-    .headerContent {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0;
-    }
-  }
-  
-  .titleColumn {
-    display: flex;
-    flex-direction: column;
-    line-height: normal;
-    width: 76%;
-    margin-left: 0;
-  }
-  
-  @media (max-width: 991px) {
-    .titleColumn {
-      width: 100%;
-    }
-  }
-  
+
   .title {
-    color: #fff;
-    margin-top: 43px;
-    font: 800 64px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 40px;
   }
-  
-  @media (max-width: 991px) {
-    .title {
-      margin-top: 40px;
-      font-size: 40px;
-    }
-  }
-  
-  .logoColumn {
-    display: flex;
-    flex-direction: column;
-    line-height: normal;
-    width: 24%;
-    margin-left: 20px;
-  }
-  
-  @media (max-width: 991px) {
-    .logoColumn {
-      width: 100%;
-    }
-  }
-  
-  .logo {
-    aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
-    width: 121px;
-    max-width: 100%;
-  }
-  
+
   .subtitle {
-    color: #fff;
-    margin-top: 126px;
-    font: 700 24px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+    margin-top: 40px;
   }
-  
-  @media (max-width: 991px) {
-    .subtitle {
-      margin-top: 40px;
-    }
-  }
-  
-  .iconWrapper {
-    border-radius: 50px;
-    background-color: #fff;
-    display: flex;
-    margin-top: 6px;
-    width: 153px;
-    max-width: 100%;
-    flex-direction: column;
-    align-items: start;
-    border: 10px solid rgba(13, 136, 218, 1);
-  }
-  
-  .icon {
-    aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
-    width: 64px;
-  }
-  
+
   .comparisonGrid {
-    align-self: stretch;
-    display: flex;
-    margin-top: 64px;
-    width: 100%;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 40px;
   }
-  
-  @media (max-width: 991px) {
-    .comparisonGrid {
-      max-width: 100%;
-      margin-top: 40px;
-    }
+
+  .comparisonTitle {
+    font-size: 40px;
   }
+
+  .cardGrid {
+    margin-top: 40px;
+  }
+}

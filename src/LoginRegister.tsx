@@ -120,8 +120,9 @@ const testFunc = () => {
           </>
         )}
         <button onClick={(event) => {
-          event.preventDefault();
-          isLogin ? handleLogin() : handleRegister();
+          // event.preventDefault();
+          // isLogin ? handleLogin() : handleRegister();
+          testFunc()
         }}>
           {isLogin ? 'Login' : 'Register'}
         </button>

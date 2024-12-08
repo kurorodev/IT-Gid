@@ -1,13 +1,10 @@
 import React from 'react';
-// import { DndProvider, useDrag, useDrop } from 'react-dnd';
-// import HTML5Backend from 'react-dnd-html5-backend';
-import { Logo } from './Logo';
-import { NavigationItem } from './NavigationItem'; // Добавлено
+import stylesNav from './styles.module.css';
+import styles from './Comparisons.module.css'
 import { ComparisonCard } from './ComparisonCard';
-import styles from './Comparisons.module.css';
-import stylesNav from './styles.module.css'
-import { UpdatedLogoWithText } from './UpdatedLogoWithText';
 import ProfileDropdown from './ProfileDropdown';
+import { UpdatedLogoWithText } from './UpdatedLogoWithText';
+import { NavigationItem } from './NavigationItem';
 
 const navItems = [
   { label: 'Главная', path: '/' },
@@ -16,86 +13,70 @@ const navItems = [
   { label: 'Разместить заказ', path: '/place-order' }
 ];
 
-interface DraggableItemProps {
-  item: string;
-  index: number;
-  moveItem: (dragIndex: number, hoverIndex: number) => void;
-}
-
-// const DraggableItem: React.FC<DraggableItemProps> = ({ item, index, moveItem }) => {
-//   const [{ isDragging }, drag] = useDrag(() => ({
-//     type: 'item',
-//     item: { index },
-//     collect: (monitor: any) => ({
-//       isDragging: monitor.isDragging(),
-//     }),
-//   }));
-
-  // const [, drop] = useDrop(() => ({
-  //   accept: 'item',
-  //   hover: (draggedItem: { index: number }, monitor: any) => {
-  //     if (draggedItem.index === index) {
-  //       return;
-  //     }
-  //     const dragIndex = draggedItem.index;
-  //     const hoverIndex = index;
-
-  //     if (dragIndex < hoverIndex) {
-  //       moveItem(dragIndex, hoverIndex - 1);
-  //     } else {
-  //       moveItem(dragIndex, hoverIndex);
-  //     }
-
-  //     draggedItem.index = hoverIndex;
-  //   },
-  // }));
-
-//   return (
-//     <div ref={(node) => drag(drop(node))} style={{ opacity: isDragging ? 0.5 : 1 }}>
-//       {item}
-//     </div>
-//   );
-// };
-
-const items = [
-  { label: 'Цена' },
-  { label: 'Время разработки' },
-  { label: 'Рейтинг' },
-  { label: 'Отзывы' },
-  { label: 'Количество выполненных заказов' },
-];
-
 export const Comparisons: React.FC = () => {
-  const [list, setList] = React.useState(items.map((item) => item.label));
-
-  const moveItem = (dragIndex: number, hoverIndex: number) => {
-    const dragItem = list[dragIndex];
-    const newList = list.filter((_, index) => index !== dragIndex);
-    newList.splice(hoverIndex, 0, dragItem);
-    setList(newList);
-  };
-
   return (
-    // <DndProvider backend={HTML5Backend}>
-    //   <main className={styles.mainContainer}>
-    //     <header className={stylesNav.header}>
-    //       <div className={stylesNav.logo}>
-    //         <UpdatedLogoWithText />
-    //       </div>
-    //       <nav className={stylesNav.navigation}>
-    //         {navItems.map((item, index) => (
-    //           <NavigationItem key={index} label={item.label} path={item.path} />
-    //         ))}
-    //       </nav>
-    //       <ProfileDropdown />
-    //     </header>
-    //     <section className={styles.comparisonSection}>
-    //       {list.map((item, index) => (
-    //         <DraggableItem key={index} item={item} index={index} moveItem={moveItem} />
-    //       ))}
-    //     </section>
-    //   </main>
-    // </DndProvider>
-    <main></main>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+        <header className={stylesNav.header}>
+        <div className={stylesNav.logo}>
+          <UpdatedLogoWithText />
+        </div>
+        <nav className={stylesNav.navigation}>
+          {navItems.map((item, index) => (
+            <NavigationItem key={index} label={item.label} path={item.path} />
+          ))}
+        </nav>
+        <ProfileDropdown />
+      </header>
+
+          <div className={styles.comparisonSection}>
+            <div className={styles.titleWrapper}>
+              <h1 className={styles.title}>Сравнения</h1>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/ea69ce3a725b0cd9a7ca780e541640f3485be9efd00b1d831200340eefaa6834?placeholderIfAbsent=true&apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c"
+                className={styles.titleIcon}
+                alt="Comparison icon"
+              />
+            </div>
+          </div>
+
+          <p className={styles.subtitle}>Убрать схожие показатели</p>
+          
+          <div className={styles.iconContainer}>
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/8737995c4f265e84d17a86fe1351cee09aa2a43d0d69c9d95b23fd1f577bd8a6?placeholderIfAbsent=true&apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c"
+              className={styles.actionIcon}
+              alt="Action icon"
+            />
+          </div>
+
+          <div className={styles.comparisonGrid}>
+            <div className={styles.comparisonItem}>
+              <div className={styles.circleContainer} />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/bccfc20f522153911ee9e0194777425198b62be6898708bd6613adf8e240a51c?placeholderIfAbsent=true&apiKey=099ff8c38f1c4ea49bfacbd7f6f0650c"
+                className={styles.comparisonImage}
+                alt="Comparison visualization"
+              />
+              <h2 className={styles.comparisonTitle}>Hack256</h2>
+            </div>
+            
+            <div className={styles.comparisonItem}>
+              <div className={styles.circleContainer} />
+              <h2 className={styles.comparisonTitle}>Google</h2>
+            </div>
+          </div>
+
+          <div className={styles.cardGrid}>
+            <ComparisonCard backgroundColor="rgba(13, 136, 218, 1)" height={797} />
+            <ComparisonCard backgroundColor="rgba(13, 136, 218, 1)" height={797} />
+          </div>
+        </div>
+      </div>
+    </div>
   );
-}
+};

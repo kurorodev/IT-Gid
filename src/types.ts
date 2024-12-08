@@ -148,3 +148,18 @@ export interface NavigationProps {
   activeTab: 'pending' | 'history';
   onTabChange: (tab: 'pending' | 'history') => void;
 }
+
+export interface ComparisonCardProps {
+  backgroundColor: string;
+  height: number;
+}
+
+export interface LogoContainerProps {
+  children: React.ReactNode;
+  shadowColor?: string;
+}
+
+export interface ImageProps {
+  src: string;
+  alt: string;
+}
